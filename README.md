@@ -1,0 +1,36 @@
+Tetris game in Rust
+
+## IDEA
+- [x] Create a board
+    - [x] Create a board with a given width and height
+- [x] Create a piece
+    - [x] Create a piece with a given shape
+    - [x] Create a piece with a given position
+    - [x] Create a piece with a given rotation
+    - [x] Create a piece with a given color
+- [x] Move piece
+    - [x] Move piece left
+    - [x] Move piece right
+    - [x] Move piece down
+    - [x] Rotate piece
+- [x] Rotate piece
+    - [x] Rotate piece left
+    - [x] Rotate piece right
+- [x] Check if piece can move
+    - [x] Check if piece can move left
+    - [x] Check if piece can move right
+    - [x] Check if piece can move down
+    - [x] Check if piece can rotate
+- [x] Check if piece can rotate
+    - [x] Check if piece can rotate left
+    - [x] Check if piece can rotate right
+- [x] Check if piece can be placed
+- [x] Place piece
+- [x] Check if row is full
+- [x] Remove full row
+- [x] Add score
+- [x] Add level
+- [x] Add speed
+- [x] Add next piece
+- [x] Add hold piece
+- [x] Add ghost piece
