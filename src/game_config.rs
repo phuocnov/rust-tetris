@@ -4,6 +4,7 @@ pub const GRID_X_OFFSET: u32 = 192;
 pub const GRID_Y_OFFSET: u32 = 14;
 pub const DOT_SIZE_IN_PXS: u32 = 29;
 
+#[derive(Clone, Debug)]
 pub enum PiecesColor {
     GREY = 0,
     BLUE = 1,

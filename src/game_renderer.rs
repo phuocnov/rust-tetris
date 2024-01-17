@@ -5,7 +5,7 @@ use crate::{
         PiecesColor, DOT_SIZE_IN_PXS, GAME_FIELD_SCALE, GRID_X_OFFSET, GRID_Y_OFFSET,
         TEXTURE_MARGIN, TEXTURE_PIECE_OFFSET, TEXTURE_PIECE_SIZE,
     },
-    game_state::{GameContext, GameState, Point},
+    game_state::{GameContext, GameState, Piece, Point},
 };
 extern crate sdl2;
 
@@ -45,14 +45,17 @@ impl Renderer {
         Ok(())
     }
 
+    fn draw_piece(&mut self, piece: &Piece) -> Result<(), String> {
+        for point in &piece.blocks {
+            self.draw_dot(point, piece.color.clone());
+        }
+        Ok(())
+    }
+
     pub fn draw(&mut self, context: &GameContext) -> Result<(), String> {
         self.draw_background();
         self.draw_game_field();
-        self.draw_dot(&Point(0, 0), PiecesColor::GREY)?;
-        self.draw_dot(&Point(1, 0), PiecesColor::BLUE)?;
-        self.draw_dot(&Point(2, 0), PiecesColor::GREEN)?;
-        self.draw_dot(&Point(0, 1), PiecesColor::ORANGE)?;
-
+        self.draw_piece(&context.current_piece);
         self.canvas.present();
         Ok(())
     }
